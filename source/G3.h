@@ -1,26 +1,34 @@
-void g3_um(float xa, float ya, float xb, float yb, float i, float j, float dl) {
+void g3_um(float xa, float ya, float xb, float yb, float i, float j, float vdx) {
     float rc = (float)i*i + (float)j*j;
-    float cosAp = (float)1 - (float)(((float)dl*dl) / ((float)2*rc));
     float xc = (float)xa + i;
     float yc = (float)ya + j;
-    float Z = (float)2*cosAp - 1.0;
     float valx = xa;
     float valy = ya;
-    float W = 0;
-    float constinsqrt = 0;
-    float numx = 0;
-    float numy = 0;
     char runwhile = 1;
+    float mydelta = 0;
     float delta = 0;
-    float mydelta = (float)dl*dl;
+    float dx = 0;
+    float dy = 0;
     long cont = 0;
     while(runwhile) {
-        W = rc/*(float)(xc-valx)*(xc-valx) + (float)(yc-valy)*(yc-valy)*/;//Teoricamente sería r^2
-        constinsqrt = (float)W*rc*((float)4 - Z*2) - (float)Z*Z*rc*rc - (float)W*W;
-        numx = (float)(yc-valy)*sqrtf(constinsqrt) - (float)Z*rc*(xc - valx) + (float)W*(xc+valx);
-        numy = (float)(valx-xc)*sqrtf(constinsqrt) - (float)Z*rc*(yc - valy) + (float)W*(yc+valy);
-        valx = (float)numx / ((float)2*W);
-        valy = (float)numy / ((float)2*W);
+        if(valy > yc) {
+            dx = -vdx;
+            dy = (float)yc - valy + (float)sqrtf(rc - (float)(valx + dx - xc)*(valx + dx - xc));
+        }else if(valy < yc) {
+            dx = vdx
+            dy = (float)yc - valy - (float)sqrtf(rc - (float)(valx + dx - xc)*(valx + dx - xc));
+        }else {
+            if(valx > xc) {
+                dx = -vdx;
+                dy = (float)yc - valy + (float)sqrtf(rc - (float)(valx + dx - xc)*(valx + dx - xc));
+            }else if(valx < xc) {
+                dx = vdx;
+                dy = (float)yc - valy - (float)sqrtf(rc - (float)(valx + dx - xc)*(valx + dx - xc));
+            }
+        }
+        valx = valx + dx;
+        valy = valy + dy;
+        mydelta = (float)dx*dx + dy*dy;
         delta = (float)(xb-valx)*(xb-valx) + (float)(yb-valy)*(yb-valy);
         if(mydelta > delta)
             runwhile = 0;
