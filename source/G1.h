@@ -1,34 +1,27 @@
-void g1_um(float xa, float ya, float xb, float yb, float deltaXY) {
+void g1_um(float xa, float ya, float xb, float yb, float dl) { 
     float val_factx = (float)xb - xa;
     float val_facty = (float)yb - ya;
-    float valM = 0;
-    float valnM = 0;
-    char dy = 0;
-    if(val_factx != 0 && val_facty != 0) {
-        valM = (float)val_factx / val_facty;
-        valnM = (float)val_facty / val_factx;
-    }
-    float const_dx = deltaXY;
-    float const_dy = (float)const_dx * valM;
-    if(val_factx < val_facty) {
-        const_dy = deltaXY;
-        const_dx = (float)const_dy * valnM;
-        dy = 1;
-    }
+    float insqrt = (float)val_factx*val_factx + (float)val_facty*val_facty;
+    float const_val = (float)sqrtf(insqrt);
+    float cosA = (float)val_factx / const_val;
+    float sinA = (float)val_facty / const_val;
+    float dx = 0;
+    float dy = 0;
     float valx = xa;
     float valy = ya;
     long cont = 0;
     float delta = 0;
     float runwhile = 1;
     while(runwhile) {
-        calc_DM1(const_dx, const_dy);
-        calc_DM2(const_dx, const_dy);
-        valx = (float)valx + const_dx;
-        valy = (float)valy + const_dy;
-        delta = (float)xb - valx;
-        if(dy)
-            delta = (float)yb - valy;
-        if(deltaXY > delta)
+        float dlc = (float)dl*dl;
+        dx = (float)dl*cosA;
+        dy = (float)dl*sinA;
+        calc_DM1(dx, dy);
+        calc_DM2(dx, dy);
+        valx = (float)valx + dx;
+        valy = (float)valy + dy;
+        delta = (float)(xb - valx)*(xb - valx) + (yb - valy)*(yb - valy);
+        if(dlc > delta)
             runwhile = 0;
         cont++;
 //        putch(13);
