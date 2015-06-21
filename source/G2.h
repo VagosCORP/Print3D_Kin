@@ -37,7 +37,11 @@ void g2_um(float xa, float ya, float xb, float yb, float i, float j, float feed)
         ndtm = 0;
     }
     
-    float cosAp = (float)1 - (float)(((float)dlc) / ((float)2*rc));
+    char state_S1 = 1;
+    char state_SM = 1;
+    char state_S2 = 1;
+    int contState = 0;
+    float cosAp = 0;//(float)1 - (float)(((float)dlc) / ((float)2*rc));
     float Z = 0;
     float valxi = xa;
     float valyi = ya;
@@ -49,12 +53,38 @@ void g2_um(float xa, float ya, float xb, float yb, float i, float j, float feed)
     float constinsqrt = 0;
     float numx = 0;
     float numy = 0;
+    float valAng = 0;  
     char runwhile = 1;
     float delta = 0;
     float mydelta = (float)dl*dl;
     long cont = 0;
     while(runwhile) {
-        
+        if(state_S1) {
+            if(contState < ndt1x) {
+                valAng = valAng + ddAng1;
+                cosAp = (float)cosf(valAng);
+                contState++;
+            }else {
+                contState = 0;
+                state_S1 = 0;
+            }
+        }else if(state_SM) {
+            if(contState < ndtm)
+                contState++;
+            else {
+                contState = 0;
+                state_SM = 0;
+            }
+        }else if(state_S2) {
+            if(contState < ndt2x) {
+                valAng = valAng - ddAng2;
+                cosAp = (float)cosf(valAng);
+                contState++;
+            }else {
+                contState = 0;
+                state_S2 = 0;
+            }
+        }
         Z = (float)2*cosAp - 1.0;
         constinsqrt = (float)W*rc*((float)4 - Z*2) - (float)Z*Z*rc*rc - (float)W*W;
         numx = (float)(valy-yc)*sqrtf(constinsqrt) - (float)Z*rc*(xc-valx) + (float)W*(xc+valx);
