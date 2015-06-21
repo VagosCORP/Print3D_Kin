@@ -1,16 +1,48 @@
-void g3_um(float xa, float ya, float xb, float yb, float i, float j, float dl) {
-    float rc = (float)i*i + (float)j*j;
-    float cosAp = (float)1 - (float)(((float)dl*dl) / ((float)2*rc));
+void g3_setup(float xa, float ya, float xb, float yb, float i, float j, float feed) {
+    
+}
+void g3_um(float xa, float ya, float xb, float yb, float i, float j, float feed) {
+    float ndt1x = ndt1;
+    float ndt2x = ndt2;
     float xc = (float)xa + i;
     float yc = (float)ya + j;
-    float Z = (float)2*cosAp - 1.0;
+    float dl = (float)((float)dt*feed) / ((float)60000000.0);
+    float dlc = (float)dl*dl;
+    float rc = (float)i*i + (float)j*j;
+    float r = (float)sqrtf(rc);
+    float cosAngA = (float)((float)xa - xc) / r;
+    float cosAngB = (float)((float)xb - xc) / r;
+    float angA = (float)acosf(cosAngA);
+    float angB = (float)acosf(cosAngB);
+    float dAngT = angB - angA;
+    if(dAngT < 0)
+        dAngT = (float)dAngT + (float)2.0*pi;
+    float cosdAng = (float)1.0 - ((float)dlc / ((float)2.0*rc));
+    float dAng = (float)acosf(cosdAng);
+    float ddAng1 = (float)dAng / ndt1x;
+    float ddAng2 = (float)dAng / ndt2x;
+    float sumNdt = (float)((float)2.0*dAngT)/dAng;
+    float ndtmx2 = (float)sumNdt - ndt1x - ndt2x;
+    float ndtm = (float)ndtmx2/2.0;
+    if(ndtm < 0) {
+        float num = (float)ndt1x*sumNdt;
+        float constR = (float)ndt2x/ndt1x;
+        float den = (float)1.0 + constR;
+        float insq = (float)num/den;
+        ndt1x = (float)sqrtf(insq);
+        ndt2x = (float)ndt1x*constR;
+        ndtm = 0;
+    }
+    
+    float cosAp = (float)1 - (float)(((float)dl*dl) / ((float)2*rc));//cos ang por delta (mágia rampas)
+    float Z = 0;
     float valxi = xa;
     float valyi = ya;
     float valx = xa;
     float valy = ya;
     float dx = 0;
     float dy = 0;
-    float W = 0;
+    float W = rc/*(float)(xc-valx)*(xc-valx) + (float)(yc-valy)*(yc-valy)*/;//Teoricamente sería r^2
     float constinsqrt = 0;
     float numx = 0;
     float numy = 0;
@@ -19,7 +51,8 @@ void g3_um(float xa, float ya, float xb, float yb, float i, float j, float dl) {
     float mydelta = (float)dl*dl;
     long cont = 0;
     while(runwhile) {
-        W = rc/*(float)(xc-valx)*(xc-valx) + (float)(yc-valy)*(yc-valy)*/;//Teoricamente sería r^2
+        
+        Z = (float)2*cosAp - 1.0;
         constinsqrt = (float)W*rc*((float)4 - Z*2) - (float)Z*Z*rc*rc - (float)W*W;
         numx = (float)(yc-valy)*sqrtf(constinsqrt) - (float)Z*rc*(xc - valx) + (float)W*(xc+valx);
         numy = (float)(valx-xc)*sqrtf(constinsqrt) - (float)Z*rc*(yc - valy) + (float)W*(yc+valy);
