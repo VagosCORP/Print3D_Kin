@@ -13,12 +13,28 @@ void g2_um(float xa, float ya, float xb, float yb, float i, float j, float feed)
     float dlc = (float)dl*dl;
     float rc = (float)i*i + (float)j*j;
     float r = (float)sqrtf(rc);
-    float cosAngA = (float)((float)xa - xc) / r;
-    float cosAngB = (float)((float)xb - xc) / r;
+    float difXa = (float)xa - xc;
+    float difYa = (float)ya - yc;
+    float difXb = (float)xb - xc;
+    float difYb = (float)yb - yc;
+    float cosAngA = (float)difXa / r;
+    float cosAngB = (float)difXb / r;
     float angA = (float)acosf(cosAngA);
+    if(difYa < 0) {
+        if(difXa < 0)
+            angA += (float)pi/2;
+        else
+            angA += pi;
+    }
     float angB = (float)acosf(cosAngB);
+    if(difYb < 0) {
+        if(difXb < 0)
+            angB += (float)pi/2;
+        else
+            angB += pi;
+    }
     float dAngT = angA - angB;
-    if(dAngT < 0)
+    if(dAngT <= 0)
         dAngT = (float)dAngT + (float)2.0*pi;
     float cosdAng = (float)1.0 - ((float)dlc / ((float)2.0*rc));
     float dAng = (float)acosf(cosdAng);
@@ -36,7 +52,6 @@ void g2_um(float xa, float ya, float xb, float yb, float i, float j, float feed)
         ndt2x = (float)ndt1x*constR;
         ndtm = 0;
     }
-    
     char state_S1 = 1;
     char state_SM = 1;
     char state_S2 = 1;
@@ -56,31 +71,36 @@ void g2_um(float xa, float ya, float xb, float yb, float i, float j, float feed)
     float valAng = 0;  
     char runwhile = 1;
     float delta = 0;
-    float mydelta = (float)dl*dl;
+//    float mydelta = (float)dl*dl;
     long cont = 0;
     while(runwhile) {
         if(state_S1) {
-            if(contState < ndt1x) {
+            if(contState < ndt1x - 1) {
                 valAng = valAng + ddAng1;
                 cosAp = (float)cosf(valAng);
                 contState++;
             }else {
+                valAng = valAng + ddAng1;
+                cosAp = (float)cosf(valAng);
                 contState = 0;
                 state_S1 = 0;
             }
         }else if(state_SM) {
-            if(contState < ndtm)
+            if(contState < ndtm - 1)
                 contState++;
             else {
                 contState = 0;
                 state_SM = 0;
             }
         }else if(state_S2) {
-            if(contState < ndt2x) {
+            if(contState < ndt2x - 1) {
                 valAng = valAng - ddAng2;
                 cosAp = (float)cosf(valAng);
                 contState++;
             }else {
+                valAng = valAng - ddAng2;//posible, valAng = ddAng2 hasta que se complete la distancia deseada
+                cosAp = (float)cosf(valAng);
+                runwhile = 0;
                 contState = 0;
                 state_S2 = 0;
             }
@@ -98,8 +118,8 @@ void g2_um(float xa, float ya, float xb, float yb, float i, float j, float feed)
         valxi = valx;
         valyi = valy;
         delta = (float)(xb-valx)*(xb-valx) + (float)(yb-valy)*(yb-valy);
-        if(mydelta > delta)
-            runwhile = 0;
+//        if(mydelta > delta)
+//            runwhile = 0;
         cont++;
 //        putch(13);
 //        send_float(valx);
