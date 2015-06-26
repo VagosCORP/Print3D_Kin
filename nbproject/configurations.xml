@@ -17,6 +17,10 @@
       <itemPath>source/config24h.h</itemPath>
       <itemPath>source/config24f.h</itemPath>
       <itemPath>source/COREXYkinematics.h</itemPath>
+      <itemPath>source/ConfigEHW.h</itemPath>
+      <itemPath>source/G1dlLegacy.h</itemPath>
+      <itemPath>source/G2dlLegacy.h</itemPath>
+      <itemPath>source/G3dlLegacy.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

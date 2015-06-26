@@ -3,8 +3,9 @@ build/default/production/source/print3d_kinmain.o:  \
 source/SYSconfig.h  \
 source/../../Comunic.h  \
  source/UART1Config.h  \
+source/ConfigEHW.h  \
 source/Timer3Config.h  \
-source/COREXYkinematics.h  \
- source/G1.h  \
+ source/COREXYkinematics.h  \
+source/G1.h  \
 source/G2.h  \
 source/G3.h 
