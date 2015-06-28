@@ -127,12 +127,12 @@ void g2_um(float xa, float ya, float xb, float yb, float i, float j, float feed)
     dy = yb - valy;
     calc_DM1(dx, dy);
     calc_DM2(dx, dy);
-//    cont++;
+    cont++;
 //    send_float_vt(valx);
 //    send_float_vt(valy);
     send_float_vt((float)cont);
 }
     
-void g2(float xa, float ya, float xb, float yb, float i, float j, float dl) {
-    g2_um(xa*1000, ya*1000, xb*1000, yb*1000, i*1000, j*1000, dl*1000);
+void g2(float xa, float ya, float xb, float yb, float i, float j, float feed) {
+    g2_um(xa*1000, ya*1000, xb*1000, yb*1000, i*1000, j*1000, feed*1000);
 }
