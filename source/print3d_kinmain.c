@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
         tof = 0;
         TMR3 = 0;
         T3CONbits.TON = 1;
-        g3(50.0,50.0,50.0,50.0,-50.0,-50.0,3000);
+        g2(50.0,50.0,50.0,50.0,-50.0,0.0,12000.0);
 //        g3(0.0,50.0,50.0,0.0,0.0,-50.0,0.1);
 //        ang1 = calc_ang1(-500,-500,-1800);
 //        ang2 = calc_ang2(-500,-500,-1800);
@@ -60,7 +60,7 @@ int main(int argc, char** argv) {
 //        send_float_vt(ang2);
 //        send_float_vt(ang3);
         send_float_vt(time);
-        delay_ms(1000);
+        delay_ms(5000);
     }
     return (EXIT_SUCCESS);
 }

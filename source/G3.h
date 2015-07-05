@@ -20,11 +20,7 @@ void g3_um(float xa, float ya, float xb, float yb, float i, float j, float feed)
     float valxi = xa;
     float valyi = ya;
     float valx = 0;
-    float valx2 = 0;
-    float valx3 = 0;
     float valy = 0;
-    float valy2 = 0;
-    float valy3 = 0;
     float xcq = (float)xc*xc;
     float yacq = 0;
     float xac = 0;
@@ -34,7 +30,6 @@ void g3_um(float xa, float ya, float xb, float yb, float i, float j, float feed)
     float rcpdlc = 0;
     float dx = 0;
     float dy = 0;
-    float constinsqrt = 0;
     float numx2 = 0;
     float numx3 = 0;
     float numy2 = 0;
@@ -47,7 +42,6 @@ void g3_um(float xa, float ya, float xb, float yb, float i, float j, float feed)
     long cont = 0;
     valxi = xb;
     valyi = yb;
-    int cont = 0;
     int num = (float)0.5*((float)ndt2x - 1);
     while(cont < num) {
         xac = (float)valxi - xc;

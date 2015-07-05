@@ -1,11 +1,4 @@
-#ifndef CONFIG24H_H
-#define	CONFIG24H_H
-
-#ifdef	__cplusplus
-extern "C" {
-#endif
-
-#define    FCY    40000000UL    // Instruction cycle frequency, Hz - required for __delayXXX() to work
+//#define    FCY    40000000UL    // Instruction cycle frequency, Hz - required for __delayXXX() to work
 #include <libpic30.h>        // __delayXXX() functions macros defined here
 #include <stdio.h>
 #include <stdlib.h>
@@ -72,43 +65,3 @@ void clock_config(void) {
     while (!OSCCONbits.LOCK);
     //////////////////////////////////////////////
 }
-
-void uart1_config(void) {
-    /////////Configuracion UART 1/////////
-    //    U1BRG = 259; //BaudRate = 9600;
-    U1BRG = 64; //BaudRate = 38400;
-    //    U1BRG = 21; //BaudRate = 115200;
-    U1MODEbits.USIDL = 0; //1?
-    U1MODEbits.IREN = 0;
-    U1MODEbits.RTSMD = 1;
-    U1MODEbits.UEN = 0b00; //11?
-    U1MODEbits.WAKE = 0;
-    U1MODEbits.LPBACK = 0;
-    U1MODEbits.ABAUD = 0;
-    U1MODEbits.URXINV = 0;
-    U1MODEbits.BRGH = 0;
-    U1MODEbits.PDSEL = 0b00;
-    U1MODEbits.STSEL = 0;
-    U1STAbits.UTXISEL1 = 0;
-    U1STAbits.UTXISEL0 = 1;
-    U1STAbits.UTXINV = 0;
-    U1STAbits.UTXBRK = 0;
-    U1STAbits.URXISEL = 0b01;
-    U1STAbits.ADDEN = 0;
-    U1STAbits.RIDLE = 0;
-    U1MODEbits.UARTEN = 1;
-    U1STAbits.UTXEN = 1;
-    IPC2bits.U1RXIP = 1; // Prioridad 1 para U1RX
-    IFS0bits.U1RXIF = 0;
-    IEC0bits.U1RXIE = 1;
-    //    U1STAbits.UTXBF //recurso, buffer vacio
-    //    U1STAbits.URXDA //recurso, datos recibidos
-}
-
-
-#ifdef	__cplusplus
-}
-#endif
-
-#endif	/* CONFIG24H_H */
-
