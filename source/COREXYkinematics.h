@@ -13,6 +13,14 @@ float dm1 = 0;
 float dm2 = 0;
 float const_pc = 0;
 
+float genDistq(float xa, float ya, float xb, float yb) {
+    return (float)(xb - xa)*(xb - xa) + (float)(yb - ya)*(yb - ya);
+}
+
+float genDist(float xa, float ya, float xb, float yb) {
+    return (float)sqrtf(genDistq(xa, ya, xb, yb));
+}
+
 void setup_kinematics(float radRot) {
     rotorRad = radRot;
     nppa = (float)nppr / ((float)2*pi);
