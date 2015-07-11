@@ -8,7 +8,6 @@
 #include "Timer3Config.h"
 //#include "OCconfig.h"
 
-
 float coord_X = 0;
 float coord_Y = 0;
 float coord_Z = -800;
