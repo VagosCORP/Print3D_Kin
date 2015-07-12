@@ -42,6 +42,7 @@ int main(int argc, char** argv) {
 //    config_RN171XV();
     
     while(1) {
+        delay_ms(5000);
         T3CONbits.TON = 0;
         tof = 0;
         TMR3 = 0;
@@ -59,7 +60,6 @@ int main(int argc, char** argv) {
 //        send_float_vt(ang2);
 //        send_float_vt(ang3);
         send_float_vt(time);
-        delay_ms(5000);
     }
     return (EXIT_SUCCESS);
 }
