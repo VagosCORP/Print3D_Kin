@@ -351,67 +351,6 @@ void g2_um(float xa, float ya, float xb, float yb, float i, float j, float feed)
                 }
             }
         }
-        
-        while(cont1 < ndt1x) {
-            valDL = valDL + ddx1;
-            valDLc = (float)valDL*valDL;
-            pwas = (float)2*valDL*r;
-            xac = (float)valxi - xc;
-            yac = (float)valyi - yc;
-            xaq = (float)valxi * valxi;
-            xacq = (float)xac * xac;
-            yacq = (float)yac * yac;
-            rcmdlc = (float)rc - valDLc;
-            rcpdlc = (float)rc + valDLc;
-            zas = (float)xacq + yacq;
-            pzas = (float)2 * zas;
-            was = (float)((float)pwas - rcpdlc + zas)*((float)rcpdlc + pwas - zas);
-            sWas = (float)sqrtf(was);
-            numx = (float)xac*rcmdlc + (float)sWas*yac + (float)xaq*valxi - (float)xaq*xc -
-                    (float)valxi*((float)xcq - yacq) + (float)xc*((float)xcq + yacq);
-            valxi = (float)numx/pzas;
-            numy = (float)yac*rcmdlc - (float)sWas*xac + (float)zas*((float)valyi + yc);
-            valyi = (float)numy/pzas;
-    //        xbi = (float)xb - valxi;
-    //        ybi = (float)yb - valyi;
-            vdq = genDistq(valx, valy, xb, yb);//(float)xbi*xbi + (float)ybi*ybi;
-            if(vdqi > vdq)//baja
-                baj = 1;
-            else if(baj)//baja, luego sube => casoC
-                casoC = 1;
-            vdqi = vdq;
-            cont1++;
-        }
-        while(cont2 < ndt2x - 1) {
-            valDL = valDL - ddx2;
-            valDLc = (float)valDL*valDL;
-            pwas = (float)2*valDL*r;
-            xac = (float)valxi - xc;
-            yac = (float)valyi - yc;
-            xaq = (float)valxi * valxi;
-            xacq = (float)xac * xac;
-            yacq = (float)yac * yac;
-            rcmdlc = (float)rc - valDLc;
-            rcpdlc = (float)rc + valDLc;
-            zas = (float)xacq + yacq;
-            pzas = (float)2 * zas;
-            was = (float)((float)pwas - rcpdlc + zas)*((float)rcpdlc + pwas - zas);
-            sWas = (float)sqrtf(was);
-            numx = (float)xac*rcmdlc + (float)sWas*yac + (float)xaq*valxi - (float)xaq*xc -
-                    (float)valxi*((float)xcq - yacq) + (float)xc*((float)xcq + yacq);
-            valxi = (float)numx/pzas;
-            numy = (float)yac*rcmdlc - (float)sWas*xac + (float)zas*((float)valyi + yc);
-            valyi = (float)numy/pzas;
-    //        xbi = (float)xb - valxi;
-    //        ybi = (float)yb - valyi;
-            vdq = genDistq(valx, valy, xb, yb);//(float)xbi*xbi + (float)ybi*ybi;
-            if(vdqi > vdq)//baja
-                baj = 1;
-            else if(baj)//baja, luego sube => casoC
-                casoC = 1;
-            vdqi = vdq;
-            cont2++;
-        }
     }
     send_float_vt((float)cont1);
     send_float_vt((float)contm);
