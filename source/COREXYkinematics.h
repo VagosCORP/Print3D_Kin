@@ -11,7 +11,37 @@ float np1 = 0;
 float np2 = 0;
 float dm1 = 0;
 float dm2 = 0;
+float dmE = 0;
+float flex = 0;
 float const_pc = 0;
+
+float circ_xb1(float yb, float rq, float xc, float yc) {
+    float res = (float)yb - yc;
+    res = (float)rq - (float)res*res;
+    res = (float)xc + sqrtf(res);
+    return res;
+}
+
+float circ_xb2(float yb, float rc, float xc, float yc) {
+    float res = (float)yb - yc;
+    res = (float)rc - (float)res*res;
+    res = (float)xc - sqrtf(res);
+    return res;
+}
+
+float circ_yb1(float xb, float rc, float xc, float yc) {
+    float res = (float)xb - xc;
+    res = (float)rc - (float)res*res;
+    res = (float)yc + sqrtf(res);
+    return res;
+}
+
+float circ_yb2(float xb, float rc, float xc, float yc) {
+    float res = (float)xb - xc;
+    res = (float)rc - (float)res*res;
+    res = (float)yc - sqrtf(res);
+    return res;
+}
 
 float genDistq(float xa, float ya, float xb, float yb) {
     return (float)(xb - xa)*(xb - xa) + (float)(yb - ya)*(yb - ya);
@@ -36,4 +66,12 @@ void calc_DM1(float dx, float dy) {
 void calc_DM2(float dx, float dy) {
     dm2 = dx - dy;
     np2 = (float)dm2*const_pc;
+}
+
+float gen_FLEX(float lte, float dlt) {
+    return (float)lte / dlt;
+}
+
+void calc_DME(float dl) {
+    dmE = flex*dl;
 }

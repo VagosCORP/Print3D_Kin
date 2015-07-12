@@ -129,30 +129,30 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0xb5a          0x1107  (4359)
 .const                       0xd5a                0x3a            0x57  (87)
-.text                        0xd94              0x34d8          0x4f44  (20292)
-.dinit                      0x426c                0xf2           0x16b  (363)
-.init.delay32               0x435e                0x1c            0x2a  (42)
+.text                        0xd94              0x4af2          0x706b  (28779)
+.dinit                      0x5886                0xf2           0x16b  (363)
+.init.delay32               0x5978                0x1c            0x2a  (42)
 
-                     Total program memory used (bytes):         0x6237  (25143) 19%
+                     Total program memory used (bytes):         0x835e  (33630) 25%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.nbss                        0x800                   0            0x38  (56)
-.ndata                       0x838                   0            0x20  (32)
-.nbss                        0x858                   0             0x2  (2)
-.data.dpowers                0x85a                   0            0xa0  (160)
-.data._iob                   0x8fa                   0            0x24  (36)
-.data                        0x91e                   0            0x18  (24)
-.data._Files                 0x936                   0             0x2  (2)
-.bss._outdone                0x938                   0             0x2  (2)
-.bss._sibuf                  0x93a                   0             0x2  (2)
-.bss._sobuf                  0x93c                   0             0x2  (2)
-.data.__C30_UART             0x93e                   0             0x2  (2)
+.nbss                        0x800                   0            0x40  (64)
+.ndata                       0x840                   0            0x20  (32)
+.nbss                        0x860                   0             0x2  (2)
+.data.dpowers                0x862                   0            0xa0  (160)
+.data._iob                   0x902                   0            0x24  (36)
+.data                        0x926                   0            0x18  (24)
+.data._Files                 0x93e                   0             0x2  (2)
+.bss._outdone                0x940                   0             0x2  (2)
+.bss._sibuf                  0x942                   0             0x2  (2)
+.bss._sobuf                  0x944                   0             0x2  (2)
+.data.__C30_UART             0x946                   0             0x2  (2)
 
-                        Total data memory used (bytes):          0x140  (320) 3%
+                        Total data memory used (bytes):          0x148  (328) 4%
 
 
 Dynamic Memory Usage
@@ -160,9 +160,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0x940                              0x1ec0  (7872)
+stack                        0x948                              0x1eb8  (7864)
 
-                        Maximum dynamic memory (bytes):         0x1ec0  (7872)
+                        Maximum dynamic memory (bytes):         0x1eb8  (7864)
 
 
 External Symbols in Data Memory (by address):
@@ -182,52 +182,56 @@ External Symbols in Data Memory (by address):
                     0x0828                  _np2
                     0x082c                  _dm1
                     0x0830                  _dm2
-                    0x0834                  _const_pc
-                    0x0838                  _coord_Z
-                    0x083c                  _pi
-                    0x0840                  _nppa
-                    0x0844                  _nppr
-                    0x0848                  _dt
-                    0x084c                  _ndt1
-                    0x0850                  _ndt2
-                    0x0854                  _reduc
-                    0x08fa                  __iob
-                    0x0936                  __Files
-                    0x0938                  __outdone
-                    0x093a                  __sibuf
-                    0x093c                  __sobuf
-                    0x093e                  ___C30_UART
+                    0x0834                  _dmE
+                    0x0838                  _flex
+                    0x083c                  _const_pc
+                    0x0840                  _coord_Z
+                    0x0844                  _pi
+                    0x0848                  _nppa
+                    0x084c                  _nppr
+                    0x0850                  _dt
+                    0x0854                  _ndt1
+                    0x0858                  _ndt2
+                    0x085c                  _reduc
+                    0x0902                  __iob
+                    0x093e                  __Files
+                    0x0940                  __outdone
+                    0x0942                  __sibuf
+                    0x0944                  __sobuf
+                    0x0946                  ___C30_UART
 
 External Symbols in Data Memory (by name):
 
-                    0x0936                  __Files
-                    0x093e                  ___C30_UART
-                    0x08fa                  __iob
-                    0x0938                  __outdone
-                    0x093a                  __sibuf
-                    0x093c                  __sobuf
+                    0x093e                  __Files
+                    0x0946                  ___C30_UART
+                    0x0902                  __iob
+                    0x0940                  __outdone
+                    0x0942                  __sibuf
+                    0x0944                  __sobuf
                     0x0810                  _ang_act1
                     0x0814                  _ang_act2
                     0x0818                  _ang_act3
                     0x0801                  _byte1
                     0x0802                  _byte2
                     0x0800                  _comCont
-                    0x0834                  _const_pc
+                    0x083c                  _const_pc
                     0x0808                  _coord_X
                     0x080c                  _coord_Y
-                    0x0838                  _coord_Z
+                    0x0840                  _coord_Z
                     0x082c                  _dm1
                     0x0830                  _dm2
-                    0x0848                  _dt
-                    0x084c                  _ndt1
-                    0x0850                  _ndt2
+                    0x0834                  _dmE
+                    0x0850                  _dt
+                    0x0838                  _flex
+                    0x0854                  _ndt1
+                    0x0858                  _ndt2
                     0x0824                  _np1
                     0x0828                  _np2
-                    0x0840                  _nppa
-                    0x0844                  _nppr
-                    0x083c                  _pi
+                    0x0848                  _nppa
+                    0x084c                  _nppr
+                    0x0844                  _pi
                     0x081c                  _redrad
-                    0x0854                  _reduc
+                    0x085c                  _reduc
                     0x0820                  _rotorRad
                     0x0804                  _tof
 
@@ -261,14 +265,14 @@ External Symbols in Program Memory (by address):
                   0x00060e                  __fcompare
                   0x000644                  ___floatdisf
                   0x000664                  ___floatundisf
-                  0x0006c2                  __printf_0
                   0x0006c2                  __printf_s
-                  0x0006d0                  __vfprintf_0
+                  0x0006c2                  __printf_0
                   0x0006d0                  __vfprintf_s
+                  0x0006d0                  __vfprintf_0
                   0x000d2e                  ___udivsi3
+                  0x000d4e                  ___mulsi3
                   0x000d4e                  ___mulp32peds3
                   0x000d4e                  ___mulp32eds3
-                  0x000d4e                  ___mulsi3
                   0x000d94                  _config_clock
                   0x000dfe                  _send_float
                   0x000e26                  _send_int32
@@ -285,25 +289,27 @@ External Symbols in Program Memory (by address):
                   0x000fd0                  _config_RN171XV
                   0x00101c                  __T3Interrupt
                   0x001034                  _config_T3
-                  0x001060                  _genDistq
-                  0x0010c8                  _genDist
-                  0x0010f6                  _setup_kinematics
-                  0x00116a                  _calc_DM1
-                  0x001198                  _calc_DM2
-                  0x0011c6                  _g1_um
-                  0x00155a                  _g1
-                  0x0015d2                  _g2_setup
-                  0x0015e6                  _xb1
-                  0x001638                  _xb2
-                  0x00168a                  _yb1
-                  0x0016dc                  _yb2
-                  0x00172e                  _g2_um
-                  0x002bd2                  _g2
-                  0x002c7a                  _g3_setup
-                  0x002c8e                  _g3_um
-                  0x004132                  _g3
-                  0x0041da                  _main
-                  0x00435e                  ___delay32
+                  0x001060                  _circ_xb1
+                  0x0010ae                  _circ_xb2
+                  0x0010fc                  _circ_yb1
+                  0x00114a                  _circ_yb2
+                  0x001198                  _genDistq
+                  0x001200                  _genDist
+                  0x00122e                  _setup_kinematics
+                  0x0012a2                  _calc_DM1
+                  0x0012d0                  _calc_DM2
+                  0x0012fe                  _gen_FLEX
+                  0x001316                  _calc_DME
+                  0x00132e                  _g1_um
+                  0x0016c2                  _g1
+                  0x00173a                  _g2_setup
+                  0x00174e                  _g2_um
+                  0x0036e0                  _g2
+                  0x003794                  _g3_setup
+                  0x0037a8                  _g3_um
+                  0x00573a                  _g3
+                  0x0057ee                  _main
+                  0x005978                  ___delay32
                   0xf80000                  __FBS.sec
                   0xf80002                  __FSS.sec
                   0xf80004                  __FGS.sec
@@ -317,7 +323,7 @@ External Symbols in Program Memory (by name):
                   0x00101c                  __T3Interrupt
                   0x000f14                  __U1RXInterrupt
                   0x000300                  ___addsf3
-                  0x00435e                  ___delay32
+                  0x005978                  ___delay32
                   0x0003ba                  ___divsf3
                   0x00043e                  ___eqsf2
                   0x000446                  ___fixsfsi
@@ -351,26 +357,32 @@ External Symbols in Program Memory (by name):
                   0x000200                  __resetPRI
                   0x0006d0                  __vfprintf_0
                   0x0006d0                  __vfprintf_s
-                  0x00116a                  _calc_DM1
-                  0x001198                  _calc_DM2
+                  0x0012a2                  _calc_DM1
+                  0x0012d0                  _calc_DM2
+                  0x001316                  _calc_DME
+                  0x001060                  _circ_xb1
+                  0x0010ae                  _circ_xb2
+                  0x0010fc                  _circ_yb1
+                  0x00114a                  _circ_yb2
                   0x000fd0                  _config_RN171XV
                   0x001034                  _config_T3
                   0x000d94                  _config_clock
                   0x000f7e                  _config_uart1
-                  0x00155a                  _g1
-                  0x0011c6                  _g1_um
-                  0x002bd2                  _g2
-                  0x0015d2                  _g2_setup
-                  0x00172e                  _g2_um
-                  0x004132                  _g3
-                  0x002c7a                  _g3_setup
-                  0x002c8e                  _g3_um
-                  0x0010c8                  _genDist
-                  0x001060                  _genDistq
+                  0x0016c2                  _g1
+                  0x00132e                  _g1_um
+                  0x0036e0                  _g2
+                  0x00173a                  _g2_setup
+                  0x00174e                  _g2_um
+                  0x00573a                  _g3
+                  0x003794                  _g3_setup
+                  0x0037a8                  _g3_um
+                  0x001200                  _genDist
+                  0x001198                  _genDistq
                   0x000ea0                  _genFloat
                   0x000ec2                  _genLong
                   0x000ee6                  _genShort
-                  0x0041da                  _main
+                  0x0012fe                  _gen_FLEX
+                  0x0057ee                  _main
                   0x000efc                  _putch
                   0x000dfe                  _send_float
                   0x000e64                  _send_float_vt
@@ -378,12 +390,8 @@ External Symbols in Program Memory (by name):
                   0x000e8c                  _send_int16_vt
                   0x000e26                  _send_int32
                   0x000e78                  _send_int32_vt
-                  0x0010f6                  _setup_kinematics
+                  0x00122e                  _setup_kinematics
                   0x0005a4                  _sqrtf
-                  0x0015e6                  _xb1
-                  0x001638                  _xb2
-                  0x00168a                  _yb1
-                  0x0016dc                  _yb2
 
 Memory Configuration
 
@@ -580,22 +588,22 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x292d
+.debug_info       0x000000       0x2a26
  *(.debug_info)
- .debug_info      0x000000       0x292d build/default/production/source/print3d_kinmain.o
+ .debug_info      0x000000       0x2a26 build/default/production/source/print3d_kinmain.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x229
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x229 build/default/production/source/print3d_kinmain.o
 
-.debug_line       0x000000       0x1ffb
+.debug_line       0x000000       0x2b9f
  *(.debug_line)
- .debug_line      0x000000       0x1ffb build/default/production/source/print3d_kinmain.o
+ .debug_line      0x000000       0x2b9f build/default/production/source/print3d_kinmain.o
 
-.debug_frame      0x000000        0x344
+.debug_frame      0x000000        0x378
  *(.debug_frame)
- .debug_frame     0x000000        0x344 build/default/production/source/print3d_kinmain.o
+ .debug_frame     0x000000        0x378 build/default/production/source/print3d_kinmain.o
 
 .debug_str        0x000000         0xa7
  *(.debug_str)
@@ -608,10 +616,10 @@ __FUID3
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x2be
+                  0x000000        0x2fd
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000        0x2be build/default/production/source/print3d_kinmain.o
+                  0x000000        0x2fd build/default/production/source/print3d_kinmain.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -1663,8 +1671,8 @@ __c30_signature
  __c30_signature
                   0x000244          0x6 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
 
-.nbss               0x0800         0x38
- .nbss              0x0800         0x38 build/default/production/source/print3d_kinmain.o
+.nbss               0x0800         0x40
+ .nbss              0x0800         0x40 build/default/production/source/print3d_kinmain.o
                     0x0800                  _comCont
                     0x0801                  _byte1
                     0x0802                  _byte2
@@ -1680,54 +1688,56 @@ __c30_signature
                     0x0828                  _np2
                     0x082c                  _dm1
                     0x0830                  _dm2
-                    0x0834                  _const_pc
+                    0x0834                  _dmE
+                    0x0838                  _flex
+                    0x083c                  _const_pc
 
-.ndata              0x0838         0x20
- .ndata             0x0838         0x20 build/default/production/source/print3d_kinmain.o
-                    0x0838                  _coord_Z
-                    0x083c                  _pi
-                    0x0840                  _nppa
-                    0x0844                  _nppr
-                    0x0848                  _dt
-                    0x084c                  _ndt1
-                    0x0850                  _ndt2
-                    0x0854                  _reduc
+.ndata              0x0840         0x20
+ .ndata             0x0840         0x20 build/default/production/source/print3d_kinmain.o
+                    0x0840                  _coord_Z
+                    0x0844                  _pi
+                    0x0848                  _nppa
+                    0x084c                  _nppr
+                    0x0850                  _dt
+                    0x0854                  _ndt1
+                    0x0858                  _ndt2
+                    0x085c                  _reduc
 
-.nbss               0x0858          0x2
- .nbss              0x0858          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(errno.eo)
-                    0x0858                  _errno
+.nbss               0x0860          0x2
+ .nbss              0x0860          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libm-elf.a(errno.eo)
+                    0x0860                  _errno
 
-.data.dpowers       0x085a         0xa0
- .data.dpowers      0x085a         0xa0 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_s.XXeo)
+.data.dpowers       0x0862         0xa0
+ .data.dpowers      0x0862         0xa0 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_s.XXeo)
 
-.data._iob          0x08fa         0x24
- .data._iob         0x08fa         0x24 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
-                    0x08fa                  __iob
+.data._iob          0x0902         0x24
+ .data._iob         0x0902         0x24 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
+                    0x0902                  __iob
 
-.data               0x091e         0x18
- .data              0x091e         0x18 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_s.XXeo)
+.data               0x0926         0x18
+ .data              0x0926         0x18 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(doprnt_s.XXeo)
 
-.data._Files        0x0936          0x2
- .data._Files       0x0936          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
-                    0x0936                  __Files
+.data._Files        0x093e          0x2
+ .data._Files       0x093e          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
+                    0x093e                  __Files
 
-.bss._outdone       0x0938          0x2
- .bss._outdone      0x0938          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
-                    0x0938                  __outdone
+.bss._outdone       0x0940          0x2
+ .bss._outdone      0x0940          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
+                    0x0940                  __outdone
 
-.bss._sibuf         0x093a          0x2
- .bss._sibuf        0x093a          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
-                    0x093a                  __sibuf
+.bss._sibuf         0x0942          0x2
+ .bss._sibuf        0x0942          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
+                    0x0942                  __sibuf
 
-.bss._sobuf         0x093c          0x2
- .bss._sobuf        0x093c          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
-                    0x093c                  __sobuf
+.bss._sobuf         0x0944          0x2
+ .bss._sobuf        0x0944          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libc-elf.a(_iob.eo)
+                    0x0944                  __sobuf
 
 .data.__C30_UART
-                    0x093e          0x2
+                    0x0946          0x2
  .data.__C30_UART
-                    0x093e          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(c30_uart.eo)
-                    0x093e                  ___C30_UART
+                    0x0946          0x2 c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(c30_uart.eo)
+                    0x0946                  ___C30_UART
 
 .config_JTAGEN    0xf8000e          0x2
  .config_JTAGEN
@@ -1749,8 +1759,8 @@ __c30_signature
 .const              0x8d5a         0x3a load address 0x000d5a  
  .const             0x8d5a         0x3a build/default/production/source/print3d_kinmain.o
 
-.text             0x000d94       0x34d8
- .text            0x000d94       0x34d8 build/default/production/source/print3d_kinmain.o
+.text             0x000d94       0x4af2
+ .text            0x000d94       0x4af2 build/default/production/source/print3d_kinmain.o
                   0x000d94                  _config_clock
                   0x000dfe                  _send_float
                   0x000e26                  _send_int32
@@ -1767,28 +1777,30 @@ __c30_signature
                   0x000fd0                  _config_RN171XV
                   0x00101c                  __T3Interrupt
                   0x001034                  _config_T3
-                  0x001060                  _genDistq
-                  0x0010c8                  _genDist
-                  0x0010f6                  _setup_kinematics
-                  0x00116a                  _calc_DM1
-                  0x001198                  _calc_DM2
-                  0x0011c6                  _g1_um
-                  0x00155a                  _g1
-                  0x0015d2                  _g2_setup
-                  0x0015e6                  _xb1
-                  0x001638                  _xb2
-                  0x00168a                  _yb1
-                  0x0016dc                  _yb2
-                  0x00172e                  _g2_um
-                  0x002bd2                  _g2
-                  0x002c7a                  _g3_setup
-                  0x002c8e                  _g3_um
-                  0x004132                  _g3
-                  0x0041da                  _main
+                  0x001060                  _circ_xb1
+                  0x0010ae                  _circ_xb2
+                  0x0010fc                  _circ_yb1
+                  0x00114a                  _circ_yb2
+                  0x001198                  _genDistq
+                  0x001200                  _genDist
+                  0x00122e                  _setup_kinematics
+                  0x0012a2                  _calc_DM1
+                  0x0012d0                  _calc_DM2
+                  0x0012fe                  _gen_FLEX
+                  0x001316                  _calc_DME
+                  0x00132e                  _g1_um
+                  0x0016c2                  _g1
+                  0x00173a                  _g2_setup
+                  0x00174e                  _g2_um
+                  0x0036e0                  _g2
+                  0x003794                  _g3_setup
+                  0x0037a8                  _g3_um
+                  0x00573a                  _g3
+                  0x0057ee                  _main
 
-.dinit            0x00426c         0xf2
- .dinit           0x00426c         0xf2 data_init
+.dinit            0x005886         0xf2
+ .dinit           0x005886         0xf2 data_init
 
-.init.delay32     0x00435e         0x1c
- .init.delay32    0x00435e         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
-                  0x00435e                  ___delay32
+.init.delay32     0x005978         0x1c
+ .init.delay32    0x005978         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
+                  0x005978                  ___delay32
