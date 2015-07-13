@@ -21,6 +21,9 @@
       <itemPath>source/G1dlLegacy.h</itemPath>
       <itemPath>source/G2dlLegacy.h</itemPath>
       <itemPath>source/G3dlLegacy.h</itemPath>
+      <itemPath>source/G1S.h</itemPath>
+      <itemPath>source/G2S.h</itemPath>
+      <itemPath>source/G3S.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

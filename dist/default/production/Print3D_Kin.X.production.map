@@ -127,11 +127,11 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0xb56          0x1101  (4353)
 .const                       0xd56                0x3a            0x57  (87)
-.text                        0xd90              0x4b2a          0x70bf  (28863)
-.dinit                      0x58ba                0xf2           0x16b  (363)
-.init.delay32               0x59ac                0x1c            0x2a  (42)
+.text                        0xd90              0x4c62          0x7293  (29331)
+.dinit                      0x59f2                0xf2           0x16b  (363)
+.init.delay32               0x5ae4                0x1c            0x2a  (42)
 
-                     Total program memory used (bytes):         0x83ac  (33708) 25%
+                     Total program memory used (bytes):         0x8580  (34176) 26%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -298,15 +298,15 @@ External Symbols in Program Memory (by address):
                   0x0012fa                  _gen_FLEX
                   0x001312                  _calc_DME
                   0x00132a                  _g1_um
-                  0x00180c                  _g1
-                  0x001890                  _g2_setup
-                  0x0018a4                  _g2_um
-                  0x0037aa                  _g2
-                  0x00385e                  _g3_setup
-                  0x003872                  _g3_um
-                  0x005778                  _g3
-                  0x00582c                  _main
-                  0x0059ac                  ___delay32
+                  0x001944                  _g1
+                  0x0019c8                  _g2_setup
+                  0x0019dc                  _g2_um
+                  0x0038e2                  _g2
+                  0x003996                  _g3_setup
+                  0x0039aa                  _g3_um
+                  0x0058b0                  _g3
+                  0x005964                  _main
+                  0x005ae4                  ___delay32
                   0xf80000                  __FBS.sec
                   0xf80002                  __FSS.sec
                   0xf80004                  __FGS.sec
@@ -320,7 +320,7 @@ External Symbols in Program Memory (by name):
                   0x001018                  __T3Interrupt
                   0x000f10                  __U1RXInterrupt
                   0x000300                  ___addsf3
-                  0x0059ac                  ___delay32
+                  0x005ae4                  ___delay32
                   0x0003ba                  ___divsf3
                   0x00043e                  ___eqsf2
                   0x000446                  ___fixsfsi
@@ -364,21 +364,21 @@ External Symbols in Program Memory (by name):
                   0x001030                  _config_T3
                   0x000d90                  _config_clock
                   0x000f7a                  _config_uart1
-                  0x00180c                  _g1
+                  0x001944                  _g1
                   0x00132a                  _g1_um
-                  0x0037aa                  _g2
-                  0x001890                  _g2_setup
-                  0x0018a4                  _g2_um
-                  0x005778                  _g3
-                  0x00385e                  _g3_setup
-                  0x003872                  _g3_um
+                  0x0038e2                  _g2
+                  0x0019c8                  _g2_setup
+                  0x0019dc                  _g2_um
+                  0x0058b0                  _g3
+                  0x003996                  _g3_setup
+                  0x0039aa                  _g3_um
                   0x0011fc                  _genDist
                   0x001194                  _genDistq
                   0x000e9c                  _genFloat
                   0x000ebe                  _genLong
                   0x000ee2                  _genShort
                   0x0012fa                  _gen_FLEX
-                  0x00582c                  _main
+                  0x005964                  _main
                   0x000ef8                  _putch
                   0x000dfa                  _send_float
                   0x000e60                  _send_float_vt
@@ -582,18 +582,18 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x2a03
+.debug_info       0x000000       0x2a72
  *(.debug_info)
- .debug_info      0x000000       0x2a03 build/default/production/source/print3d_kinmain.o
+ .debug_info      0x000000       0x2a72 build/default/production/source/print3d_kinmain.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x229
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x229 build/default/production/source/print3d_kinmain.o
 
-.debug_line       0x000000       0x2b7f
+.debug_line       0x000000       0x2c67
  *(.debug_line)
- .debug_line      0x000000       0x2b7f build/default/production/source/print3d_kinmain.o
+ .debug_line      0x000000       0x2c67 build/default/production/source/print3d_kinmain.o
 
 .debug_frame      0x000000        0x370
  *(.debug_frame)
@@ -1751,8 +1751,8 @@ __c30_signature
 .const              0x8d56         0x3a load address 0x000d56  
  .const             0x8d56         0x3a build/default/production/source/print3d_kinmain.o
 
-.text             0x000d90       0x4b2a
- .text            0x000d90       0x4b2a build/default/production/source/print3d_kinmain.o
+.text             0x000d90       0x4c62
+ .text            0x000d90       0x4c62 build/default/production/source/print3d_kinmain.o
                   0x000d90                  _config_clock
                   0x000dfa                  _send_float
                   0x000e22                  _send_int32
@@ -1781,18 +1781,18 @@ __c30_signature
                   0x0012fa                  _gen_FLEX
                   0x001312                  _calc_DME
                   0x00132a                  _g1_um
-                  0x00180c                  _g1
-                  0x001890                  _g2_setup
-                  0x0018a4                  _g2_um
-                  0x0037aa                  _g2
-                  0x00385e                  _g3_setup
-                  0x003872                  _g3_um
-                  0x005778                  _g3
-                  0x00582c                  _main
+                  0x001944                  _g1
+                  0x0019c8                  _g2_setup
+                  0x0019dc                  _g2_um
+                  0x0038e2                  _g2
+                  0x003996                  _g3_setup
+                  0x0039aa                  _g3_um
+                  0x0058b0                  _g3
+                  0x005964                  _main
 
-.dinit            0x0058ba         0xf2
- .dinit           0x0058ba         0xf2 data_init
+.dinit            0x0059f2         0xf2
+ .dinit           0x0059f2         0xf2 data_init
 
-.init.delay32     0x0059ac         0x1c
- .init.delay32    0x0059ac         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
-                  0x0059ac                  ___delay32
+.init.delay32     0x005ae4         0x1c
+ .init.delay32    0x005ae4         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
+                  0x005ae4                  ___delay32
