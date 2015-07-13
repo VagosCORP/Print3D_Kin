@@ -129,11 +129,11 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0xb5a          0x1107  (4359)
 .const                       0xd5a                0x3a            0x57  (87)
-.text                        0xd94              0x4af2          0x706b  (28779)
-.dinit                      0x5886                0xf2           0x16b  (363)
-.init.delay32               0x5978                0x1c            0x2a  (42)
+.text                        0xd94              0x49f6          0x6ef1  (28401)
+.dinit                      0x578a                0xf2           0x16b  (363)
+.init.delay32               0x587c                0x1c            0x2a  (42)
 
-                     Total program memory used (bytes):         0x835e  (33630) 25%
+                     Total program memory used (bytes):         0x81e4  (33252) 25%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -304,12 +304,12 @@ External Symbols in Program Memory (by address):
                   0x0016c2                  _g1
                   0x00173a                  _g2_setup
                   0x00174e                  _g2_um
-                  0x0036e0                  _g2
-                  0x003794                  _g3_setup
-                  0x0037a8                  _g3_um
-                  0x00573a                  _g3
-                  0x0057ee                  _main
-                  0x005978                  ___delay32
+                  0x00362c                  _g2
+                  0x0036e0                  _g3_setup
+                  0x0036f4                  _g3_um
+                  0x00563e                  _g3
+                  0x0056f2                  _main
+                  0x00587c                  ___delay32
                   0xf80000                  __FBS.sec
                   0xf80002                  __FSS.sec
                   0xf80004                  __FGS.sec
@@ -323,7 +323,7 @@ External Symbols in Program Memory (by name):
                   0x00101c                  __T3Interrupt
                   0x000f14                  __U1RXInterrupt
                   0x000300                  ___addsf3
-                  0x005978                  ___delay32
+                  0x00587c                  ___delay32
                   0x0003ba                  ___divsf3
                   0x00043e                  ___eqsf2
                   0x000446                  ___fixsfsi
@@ -370,19 +370,19 @@ External Symbols in Program Memory (by name):
                   0x000f7e                  _config_uart1
                   0x0016c2                  _g1
                   0x00132e                  _g1_um
-                  0x0036e0                  _g2
+                  0x00362c                  _g2
                   0x00173a                  _g2_setup
                   0x00174e                  _g2_um
-                  0x00573a                  _g3
-                  0x003794                  _g3_setup
-                  0x0037a8                  _g3_um
+                  0x00563e                  _g3
+                  0x0036e0                  _g3_setup
+                  0x0036f4                  _g3_um
                   0x001200                  _genDist
                   0x001198                  _genDistq
                   0x000ea0                  _genFloat
                   0x000ec2                  _genLong
                   0x000ee6                  _genShort
                   0x0012fe                  _gen_FLEX
-                  0x0057ee                  _main
+                  0x0056f2                  _main
                   0x000efc                  _putch
                   0x000dfe                  _send_float
                   0x000e64                  _send_float_vt
@@ -597,9 +597,9 @@ __FUID3
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x229 build/default/production/source/print3d_kinmain.o
 
-.debug_line       0x000000       0x2b9f
+.debug_line       0x000000       0x2b0f
  *(.debug_line)
- .debug_line      0x000000       0x2b9f build/default/production/source/print3d_kinmain.o
+ .debug_line      0x000000       0x2b0f build/default/production/source/print3d_kinmain.o
 
 .debug_frame      0x000000        0x378
  *(.debug_frame)
@@ -1759,8 +1759,8 @@ __c30_signature
 .const              0x8d5a         0x3a load address 0x000d5a  
  .const             0x8d5a         0x3a build/default/production/source/print3d_kinmain.o
 
-.text             0x000d94       0x4af2
- .text            0x000d94       0x4af2 build/default/production/source/print3d_kinmain.o
+.text             0x000d94       0x49f6
+ .text            0x000d94       0x49f6 build/default/production/source/print3d_kinmain.o
                   0x000d94                  _config_clock
                   0x000dfe                  _send_float
                   0x000e26                  _send_int32
@@ -1792,15 +1792,15 @@ __c30_signature
                   0x0016c2                  _g1
                   0x00173a                  _g2_setup
                   0x00174e                  _g2_um
-                  0x0036e0                  _g2
-                  0x003794                  _g3_setup
-                  0x0037a8                  _g3_um
-                  0x00573a                  _g3
-                  0x0057ee                  _main
+                  0x00362c                  _g2
+                  0x0036e0                  _g3_setup
+                  0x0036f4                  _g3_um
+                  0x00563e                  _g3
+                  0x0056f2                  _main
 
-.dinit            0x005886         0xf2
- .dinit           0x005886         0xf2 data_init
+.dinit            0x00578a         0xf2
+ .dinit           0x00578a         0xf2 data_init
 
-.init.delay32     0x005978         0x1c
- .init.delay32    0x005978         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
-                  0x005978                  ___delay32
+.init.delay32     0x00587c         0x1c
+ .init.delay32    0x00587c         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
+                  0x00587c                  ___delay32
