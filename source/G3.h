@@ -4,8 +4,8 @@ void g3_setup(float xa, float ya, float xb, float yb, float i, float j, float fe
 
 void g3_um(float xa, float ya, float xb, float yb, float i, float j, float ext, float feed) {
     float dlt = 0;
-    float ndt1x = ndt1;
-    float ndt2x = ndt2;
+    long ndt1x = ndt1;
+    long ndt2x = ndt2;
     float xc = (float)xa + i;
     float yc = (float)ya + j;
     float dl = (float)((float)dt*feed) / ((float)60000000.0);
@@ -217,24 +217,24 @@ void g3_um(float xa, float ya, float xb, float yb, float i, float j, float ext, 
         distX = xb - xa;
         distY = yb - ya;
         if(ya >= yc) {
-            if(yb >= yc) {
+            if(yb >= yc) {//A
                 dx = (float)2*((float)distX / ((float)ndt1x + ndt2x));
                 ddx1 = (float)dx / ndt1x;
                 ddx2 = (float)dx / ndt2x;
                 mDXY = 0;
-            }else {
+            }else {//B
                 dy = (float)2*((float)distY / ((float)ndt1x + ndt2x));
                 ddy1 = (float)dy / ndt1x;
                 ddy2 = (float)dy / ndt2x;
                 mDXY = 1;
             }
         }else {
-            if(yb >= yc) {
+            if(yb >= yc) {//C
                 dy = (float)2*((float)distY / ((float)ndt1x + ndt2x));
                 ddy1 = (float)dy / ndt1x;
                 ddy2 = (float)dy / ndt2x;
                 mDXY = 1;
-            }else {
+            }else {//D
                 dx = (float)2*((float)distX / ((float)ndt1x + ndt2x));
                 ddx1 = (float)dx / ndt1x;
                 ddx2 = (float)dx / ndt2x;

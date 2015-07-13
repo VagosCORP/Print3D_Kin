@@ -4,8 +4,8 @@ long nppa = 397.88735772974;//2500/2*pi
 long nppr = 2500;
 float rotorRad = 0;
 float dt = 500;//us
-float ndt1 = 19;//ac
-float ndt2 = 19;//dc
+long ndt1 = 19.0;//ac
+long ndt2 = 19.0;//dc
 float reduc = 30.0;
 float np1 = 0;
 float np2 = 0;
@@ -22,23 +22,23 @@ float circ_xb1(float yb, float rq, float xc, float yc) {
     return res;
 }
 
-float circ_xb2(float yb, float rc, float xc, float yc) {
+float circ_xb2(float yb, float rq, float xc, float yc) {
     float res = (float)yb - yc;
-    res = (float)rc - (float)res*res;
+    res = (float)rq - (float)res*res;
     res = (float)xc - sqrtf(res);
     return res;
 }
 
-float circ_yb1(float xb, float rc, float xc, float yc) {
+float circ_yb1(float xb, float rq, float xc, float yc) {
     float res = (float)xb - xc;
-    res = (float)rc - (float)res*res;
+    res = (float)rq - (float)res*res;
     res = (float)yc + sqrtf(res);
     return res;
 }
 
-float circ_yb2(float xb, float rc, float xc, float yc) {
+float circ_yb2(float xb, float rq, float xc, float yc) {
     float res = (float)xb - xc;
-    res = (float)rc - (float)res*res;
+    res = (float)rq - (float)res*res;
     res = (float)yc - sqrtf(res);
     return res;
 }
