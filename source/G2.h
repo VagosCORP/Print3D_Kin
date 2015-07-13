@@ -375,55 +375,6 @@ void g2_um(float xa, float ya, float xb, float yb, float i, float j, float ext, 
             dlt += valDL;
             cont++;
         }
-//        cont2 = 0;
-//        runwhile = 1;
-//        while(runwhile) {
-//            vdq = genDistq(valxi, valyi, xb, yb);
-//            if(valDL > ddl2) {
-//                valDL -= ddl2;
-//                valDLq = (float)valDL*valDL;
-//                pwas = (float)2*valDL*r;
-//                rqmdlq = (float)rq - valDLq;
-//                rqpdlq = (float)rq + valDLq;
-//            }
-//            if(valDLq <= vdq) {
-//                xac = (float)valxi - xc;
-//                yac = (float)valyi - yc;
-//                xaq = (float)valxi * valxi;
-//                xacq = (float)xac * xac;
-//                yacq = (float)yac * yac;
-//                zas = (float)xacq + yacq;
-//                pzas = (float)2 * zas;
-//                was = (float)((float)pwas - rqpdlq + zas)*((float)rqpdlq + pwas - zas);
-//                sWas = (float)sqrtf(was);
-//                numx = (float)xac*rqmdlq + (float)sWas*yac + (float)xaq*valxi - (float)xaq*xc -
-//                        (float)valxi*((float)xcq - yacq) + (float)xc*((float)xcq + yacq);
-//                valx = (float)numx/pzas;
-//                numy = (float)yac*rqmdlq - (float)sWas*xac + (float)zas*((float)valyi + yc);
-//                valy = (float)numy/pzas;
-//                dx = valx - valxi;
-//                dy = valy - valyi;
-//                valxi = valx;
-//                valyi = valy;
-//                calc_DM1(dx,dy);
-//                calc_DM2(dx,dy);
-//                calc_DME(valDL);
-//                dlt += valDL;
-//                cont2++;
-//            }else {//último avance para el final ;)
-//                valDL = sqrtf(vdq);
-//                dx = xb - valxi;
-//                dy = yb - valyi;
-//                valxi = xb;
-//                valyi = yb;
-//                calc_DM1(dx,dy);
-//                calc_DM2(dx,dy);
-//                calc_DME(valDL);
-//                dlt += valDL;
-//                runwhile = 0;
-//                cont2++;
-//            }
-//        }
         cont = cont2;
         cont2 = 0;
         while(cont2 < cont - 1.0) {
