@@ -173,12 +173,6 @@ void g2_um(float xa, float ya, float xb, float yb, float i, float j, float ext, 
                 pwas = (float)2*valDL*r;
                 rqmdlq = (float)rq - valDLq;
                 rqpdlq = (float)rq + valDLq;
-//            }else if(valDL < ddl2){
-//                valDL = ddl2;
-//                valDLq = (float)valDL*valDL;
-//                pwas = (float)2*valDL*r;
-//                rqmdlq = (float)rq - valDLq;
-//                rqpdlq = (float)rq + valDLq;
             }
             if(valDLq <= vdq) {
                 xac = (float)valxi - xc;
@@ -391,12 +385,6 @@ void g2_um(float xa, float ya, float xb, float yb, float i, float j, float ext, 
 //                pwas = (float)2*valDL*r;
 //                rqmdlq = (float)rq - valDLq;
 //                rqpdlq = (float)rq + valDLq;
-////            }else if(valDL < ddl2){
-////                valDL = ddl2;
-////                valDLq = (float)valDL*valDL;
-////                pwas = (float)2*valDL*r;
-////                rqmdlq = (float)rq - valDLq;
-////                rqpdlq = (float)rq + valDLq;
 //            }
 //            if(valDLq <= vdq) {
 //                xac = (float)valxi - xc;
