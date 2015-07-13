@@ -53,7 +53,6 @@ void g1_um(float xa, float ya, float xb, float yb, float ext, float feed) {
         calc_DME(valDL);
         valx = (float)valx + dx;
         valy = (float)valy + dy;
-        delta = genDist(valx,valy,xb,yb);
         cont++;
     }
     cont = 0;
@@ -70,7 +69,7 @@ void g1_um(float xa, float ya, float xb, float yb, float ext, float feed) {
         valx = (float)valx + dx;
         valy = (float)valy + dy;
         delta = genDist(valx,valy,xb,yb);
-        send_float_vt(valx);
+        send_float_vt(valDL);
         cont++;
     }
     valDL = delta;
