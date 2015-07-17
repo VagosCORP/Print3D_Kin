@@ -4,21 +4,18 @@
 #include "../../Comunic.h"
 #include "UART1Config.h"
 #include "ConfigEHW.h"
-//#include "Timer1Config.h"
 #include "Timer3Config.h"
 //#include "OCconfig.h"
 
-float coord_X = 0;
-float coord_Y = 0;
-float coord_Z = -800;
-float ang_act1 = 0;
-float ang_act2 = 0;
-float ang_act3 = 0;
+float coordX = 50000.0;
+float coordY = 50000.0;
+float coordZ = -4000000.0;
 
 #include "COREXYkinematics.h"
 #include "G1.h"
 #include "G2.h"
 #include "G3.h"
+#include "Timer1Config.h"
 
 int main(int argc, char** argv) {
     
@@ -47,13 +44,10 @@ int main(int argc, char** argv) {
         tof = 0;
         TMR3 = 0;
         T3CONbits.TON = 1;
-        g1(-500.0,-500.0,500.0,500.0,24.6,12000.0);
-//        g2(50.0,50.0,50.0,50.0,-50.0,0.0,24.6,12000.0);
+//        g1(/*-500.0,-500.0,*/500.0,500.0,24.6,12000.0);
+        g2(/*50.0,50.0,*/50.0,50.0,-50.0,0.0,24.6,12000.0);
 //        g2(50.0,50.0,49.9775,48.5001687595,-50.0,0.0,24.6,12000.0);
 //        g3(0.0,50.0,50.0,0.0,0.0,-50.0,0.1);
-//        ang1 = calc_ang1(-500,-500,-1800);
-//        ang2 = calc_ang2(-500,-500,-1800);
-//        ang3 = calc_ang3(-500,-500,-1800);
         T3CONbits.TON = 0;
         timex = (float)TMR3 + (float)tof*65536;
 //        time = (float)timex*0.0000625;//24F

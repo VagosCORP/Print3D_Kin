@@ -8,4 +8,5 @@ source/Timer3Config.h  \
  source/COREXYkinematics.h  \
 source/G1.h  \
 source/G2.h  \
-source/G3.h 
+source/G3.h  \
+ source/Timer1Config.h 

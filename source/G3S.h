@@ -2,7 +2,7 @@ void g3_setup(float xa, float ya, float xb, float yb, float i, float j, float fe
     
 }
 
-void g3_um(float xa, float ya, float xb, float yb, float i, float j, float ext, float feed) {
+void g3um(float xa, float ya, float xb, float yb, float i, float j, float ext, float feed) {
     float dlt = 0;
     long ndt1x = ndt1;
     long ndt2x = ndt2;
@@ -510,5 +510,5 @@ void g3_um(float xa, float ya, float xb, float yb, float i, float j, float ext, 
 
 void g3(float xa, float ya, float xb, float yb, float i, float j, float ext, float feed) {
     flex = 0;
-    g3_um(xa*1000, ya*1000, xb*1000, yb*1000, i*1000, j*1000, ext, feed*1000);
+    g3um(xa*1000, ya*1000, xb*1000, yb*1000, i*1000, j*1000, ext, feed*1000);
 }

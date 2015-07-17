@@ -1,4 +1,4 @@
-void g1_um(float xa, float ya, float xb, float yb, float ext, float feed) {
+void g1um(float xa, float ya, float xb, float yb, float ext, float feed) {
     long ndt1x = ndt1;
     long ndt2x = ndt2;
     float vd = 0;
@@ -115,5 +115,5 @@ void g1_um(float xa, float ya, float xb, float yb, float ext, float feed) {
 
 void g1(float xa, float ya, float xb, float yb, float ext, float feed) {
     flex = 0;
-    g1_um(xa*1000, ya*1000, xb*1000, yb*1000, ext, feed*1000);
+    g1um(xa*1000, ya*1000, xb*1000, yb*1000, ext, feed*1000);
 }
