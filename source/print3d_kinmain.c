@@ -2,7 +2,6 @@
 #include <math.h>
 //#include "PeriferialConfig.h"
 #include "../../Comunic.h"
-#include "UART1Config.h"
 #include "ConfigEHW.h"
 #include "Timer3Config.h"
 //#include "OCconfig.h"
@@ -12,6 +11,7 @@ float coordY = 50000.0;
 float coordZ = -4000000.0;
 
 #include "COREXYkinematics.h"
+#include "UART1Config.h"
 #include "G1.h"
 #include "G2.h"
 #include "G3.h"
@@ -43,9 +43,10 @@ int main(int argc, char** argv) {
         T3CONbits.TON = 0;
         tof = 0;
         TMR3 = 0;
-        T3CONbits.TON = 1;
 //        g1(/*-500.0,-500.0,*/500.0,500.0,24.6,12000.0);
-        g2(/*50.0,50.0,*/50.0,50.0,-50.0,0.0,24.6,12000.0);
+        g3(/*50.0,50.0,*/50.0,50.0,-50.0,0.0,24.6,12000.0);
+        T3CONbits.TON = 1;
+        G3RT();
 //        g2(50.0,50.0,49.9775,48.5001687595,-50.0,0.0,24.6,12000.0);
 //        g3(0.0,50.0,50.0,0.0,0.0,-50.0,0.1);
         T3CONbits.TON = 0;

@@ -1,11 +1,11 @@
 void __attribute__((__interrupt__, no_auto_psv)) _T1Interrupt(void) {
-//    if(Gtype == G1) {
-//        G1RT();
-//    }else if(Gtype == G2) {
-//        G2RT();
-//    }else if(Gtype == G3) {
-//        G3RT();
-//    }
+    if(Gtype == G1) {
+        G1RT();
+    }else if(Gtype == G2) {
+        G2RT();
+    }else if(Gtype == G3) {
+        G3RT();
+    }
     IFS0bits.T1IF = 0; // Clear Timer2 Interrupt Flag}
 }
     

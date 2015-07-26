@@ -55,6 +55,7 @@ void G2RT() {
             dlt += valDL;
             cont++;
         }
+        send_float_vt((float)cont);
         cont = 0;
         valDL = dl;
         valDLq = dlq;
@@ -86,6 +87,7 @@ void G2RT() {
             dlt += valDL;
             cont++;
         }
+        send_float_vt((float)cont);
         cont = 0;
         while(cont < cont2 - 1.0) {
             if(cont < ndt2x - 1.0) {
@@ -94,7 +96,13 @@ void G2RT() {
                 pwas = (float)2*valDL*r;
                 rqpdlq = (float)rq + valDLq;
                 rqmdlq = (float)rq - valDLq;
-            }  
+            }else {
+                valDL = ddl2;
+                valDLq = (float)valDL*valDL;
+                pwas = (float)2*valDL*r;
+                rqpdlq = (float)rq + valDLq;
+                rqmdlq = (float)rq - valDLq;
+            } 
             xac = (float)coordX - xc;
             yac = (float)coordY - yc;
             xaq = (float)coordX * coordX;
@@ -122,15 +130,14 @@ void G2RT() {
         valDL = genDist(coordX,coordY,valXb,valYb);
         dx = valXb - coordX;
         dy = valYb - coordY;
-        coordX = valx;
-        coordY = valy;
+        coordX = valXb;
+        coordY = valYb;
         calc_DM1(dx,dy);
         calc_DM2(dx,dy);
         calc_DME(valDL);
         dlt += valDL;
         cont++;
-        send_float_vt((float)cont);
-    }else {  
+    }else {//casoC  
         if(!mDXY) {
             while(cont < ndt1x) {
                 valDX += ddx1;
@@ -170,7 +177,6 @@ void G2RT() {
                 dlt += valDL;
                 cont++;
             }
-            send_float_vt((float)cont);
         }else {
             while(cont < ndt1x) {
                 valDY += ddy1;
@@ -210,11 +216,10 @@ void G2RT() {
                 dlt += valDL;
                 cont++;
             }
-            send_float_vt((float)cont);
         }
     }
-    send_float_vt(dlt);
-    
+    send_float_vt((float)cont);
+    send_float_vt(dlt); 
     if(casoC)
         send_float_vt(3.0);
     else
@@ -527,7 +532,7 @@ void g2um(/*float xa, float ya, */float xb, float yb, float i, float j, float ex
         send_float_vt(1.0);
     flex = gen_FLEX(ext,dlt);
     
-    G2RT();
+//    G2RT();
 }
     
 void g2(/*float xa, float ya, */float xb, float yb, float i, float j, float ext, float feed) {

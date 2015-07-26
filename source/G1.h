@@ -161,7 +161,7 @@ void g1um(/*float xa, float ya, */float xb, float yb, float ext, float feed) {
     send_float_vt(ndtmx);
     send_float_vt(cont2);
     
-    G1RT();
+//    G1RT();
 }
 
 void g1(/*float xa, float ya, */float xb, float yb, float ext, float feed) {

@@ -55,6 +55,7 @@ void G3RT() {
             dlt += valDL;
             cont++;
         }
+        send_float_vt((float)cont);
         cont = 0;
         valDL = dl;
         valDLq = dlq;
@@ -86,6 +87,7 @@ void G3RT() {
             dlt += valDL;
             cont++;
         }
+        send_float_vt((float)cont);
         cont = 0;
         while(cont < cont2 - 1.0) {
             if(cont < ndt2x - 1.0) {
@@ -94,7 +96,13 @@ void G3RT() {
                 pwas = (float)2*valDL*r;
                 rqmdlq = (float)rq - valDLq;
                 rqpdlq = (float)rq + valDLq;
-            }
+            }else {
+                valDL = ddl2;
+                valDLq = (float)valDL*valDL;
+                pwas = (float)2*valDL*r;
+                rqpdlq = (float)rq + valDLq;
+                rqmdlq = (float)rq - valDLq;
+            } 
             xac = (float)coordX - xc;
             yac = (float)coordY - yc;
             xaq = (float)coordX * coordX;
@@ -122,8 +130,8 @@ void G3RT() {
         valDL = genDist(coordX,coordY,valXb,valYb);
         dx = valXb - coordX;
         dy = valYb - coordY;
-        coordX = valx;
-        coordY = valy;
+        coordX = valXb;
+        coordY = valYb;
         calc_DM1(dx,dy);
         calc_DM2(dx,dy);
         calc_DME(valDL);
@@ -149,6 +157,7 @@ void G3RT() {
                 dlt += valDL;
                 cont++;
             }
+            send_float_vt((float)cont);
             cont = 0;
             while(cont < ndt2x - 1.0) {
                 valDX -= ddx2;
@@ -187,6 +196,7 @@ void G3RT() {
                 dlt += valDL;
                 cont++;
             }
+            send_float_vt((float)cont);
             cont = 0;
             while(cont < ndt2x - 1.0) {
                 valDY -= ddy2;
@@ -208,10 +218,8 @@ void G3RT() {
             }
         }
     }
+    send_float_vt((float)cont);
     send_float_vt(dlt);
-//    send_float_vt((float)cont1);
-//    send_float_vt((float)contm);
-//    send_float_vt((float)cont2);
     if(casoC)
         send_float_vt(3.0);
     else
@@ -523,7 +531,7 @@ void g3um(/*float xa, float ya, */float xb, float yb, float i, float j, float ex
         send_float_vt(1.0);
     flex = gen_FLEX(ext,dlt);
     
-    G3RT();
+//    G3RT();
 }
 
 void g3(/*float xa, float ya, */float xb, float yb, float i, float j, float ext, float feed) {

@@ -127,11 +127,11 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0xb56          0x1101  (4353)
 .const                       0xd56                0x3e            0x5d  (93)
-.text                        0xd94              0x5554          0x7ffe  (32766)
-.dinit                      0x62e8                0xfa           0x177  (375)
-.init.delay32               0x63e2                0x1c            0x2a  (42)
+.text                        0xd94              0x565a          0x8187  (33159)
+.dinit                      0x63ee                0xfa           0x177  (375)
+.init.delay32               0x64e8                0x1c            0x2a  (42)
 
-                     Total program memory used (bytes):         0x92fd  (37629) 28%
+                     Total program memory used (bytes):         0x9486  (38022) 28%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -366,17 +366,17 @@ External Symbols in Program Memory (by address):
                   0x001312                  _calc_DME
                   0x00132a                  _G1RT
                   0x001648                  _g1um
-                  0x001c26                  _g1
-                  0x001c84                  _G2RT
-                  0x002b00                  _g2um
-                  0x003eee                  _g2
-                  0x003f7c                  _G3RT
-                  0x004db2                  _g3um
-                  0x00619a                  _g3
-                  0x006228                  __T1Interrupt
-                  0x006230                  _config_T1
-                  0x00625c                  _main
-                  0x0063e2                  ___delay32
+                  0x001c24                  _g1
+                  0x001c82                  _G2RT
+                  0x002b60                  _g2um
+                  0x003f4c                  _g2
+                  0x003fda                  _G3RT
+                  0x004eb8                  _g3um
+                  0x00629e                  _g3
+                  0x00632c                  __T1Interrupt
+                  0x006334                  _config_T1
+                  0x006360                  _main
+                  0x0064e8                  ___delay32
                   0xf80000                  __FBS.sec
                   0xf80002                  __FSS.sec
                   0xf80004                  __FGS.sec
@@ -384,17 +384,17 @@ External Symbols in Program Memory (by address):
 External Symbols in Program Memory (by name):
 
                   0x00132a                  _G1RT
-                  0x001c84                  _G2RT
-                  0x003f7c                  _G3RT
+                  0x001c82                  _G2RT
+                  0x003fda                  _G3RT
                   0x00029a                  __DefaultInterrupt
                   0xf80000                  __FBS.sec
                   0xf80004                  __FGS.sec
                   0xf80002                  __FSS.sec
-                  0x006228                  __T1Interrupt
+                  0x00632c                  __T1Interrupt
                   0x00101c                  __T3Interrupt
                   0x000f14                  __U1RXInterrupt
                   0x000300                  ___addsf3
-                  0x0063e2                  ___delay32
+                  0x0064e8                  ___delay32
                   0x0003ba                  ___divsf3
                   0x00043e                  ___eqsf2
                   0x000446                  ___fixsfsi
@@ -435,23 +435,23 @@ External Symbols in Program Memory (by name):
                   0x0010fc                  _circ_yb1
                   0x00114a                  _circ_yb2
                   0x000fd0                  _config_RN171XV
-                  0x006230                  _config_T1
+                  0x006334                  _config_T1
                   0x001034                  _config_T3
                   0x000d94                  _config_clock
                   0x000f7e                  _config_uart1
-                  0x001c26                  _g1
+                  0x001c24                  _g1
                   0x001648                  _g1um
-                  0x003eee                  _g2
-                  0x002b00                  _g2um
-                  0x00619a                  _g3
-                  0x004db2                  _g3um
+                  0x003f4c                  _g2
+                  0x002b60                  _g2um
+                  0x00629e                  _g3
+                  0x004eb8                  _g3um
                   0x001200                  _genDist
                   0x001198                  _genDistq
                   0x000ea0                  _genFloat
                   0x000ec2                  _genLong
                   0x000ee6                  _genShort
                   0x0012fa                  _gen_FLEX
-                  0x00625c                  _main
+                  0x006360                  _main
                   0x000d90                  _pi
                   0x000efc                  _putch
                   0x000dfe                  _send_float
@@ -656,18 +656,18 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x2f9e
+.debug_info       0x000000       0x2faa
  *(.debug_info)
- .debug_info      0x000000       0x2f9e build/default/production/source/print3d_kinmain.o
+ .debug_info      0x000000       0x2faa build/default/production/source/print3d_kinmain.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x263
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x263 build/default/production/source/print3d_kinmain.o
 
-.debug_line       0x000000       0x2f85
+.debug_line       0x000000       0x2fed
  *(.debug_line)
- .debug_line      0x000000       0x2f85 build/default/production/source/print3d_kinmain.o
+ .debug_line      0x000000       0x2fed build/default/production/source/print3d_kinmain.o
 
 .debug_frame      0x000000        0x368
  *(.debug_frame)
@@ -709,7 +709,7 @@ __FUID3
                   0x000014          0x4 LONG 0x29a DEFINED (__INT0Interrupt)?ABSOLUTE (__INT0Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000016          0x4 LONG 0x29a DEFINED (__IC1Interrupt)?ABSOLUTE (__IC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000018          0x4 LONG 0x29a DEFINED (__OC1Interrupt)?ABSOLUTE (__OC1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00001a          0x4 LONG 0x6228 DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00001a          0x4 LONG 0x632c DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00001c          0x4 LONG 0x29a DEFINED (__DMA0Interrupt)?ABSOLUTE (__DMA0Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00001e          0x4 LONG 0x29a DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000020          0x4 LONG 0x29a DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -837,7 +837,7 @@ __FUID3
                   0x000114          0x4 LONG 0x29a DEFINED (__AltINT0Interrupt)?ABSOLUTE (__AltINT0Interrupt):DEFINED (__INT0Interrupt)?ABSOLUTE (__INT0Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000116          0x4 LONG 0x29a DEFINED (__AltIC1Interrupt)?ABSOLUTE (__AltIC1Interrupt):DEFINED (__IC1Interrupt)?ABSOLUTE (__IC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000118          0x4 LONG 0x29a DEFINED (__AltOC1Interrupt)?ABSOLUTE (__AltOC1Interrupt):DEFINED (__OC1Interrupt)?ABSOLUTE (__OC1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00011a          0x4 LONG 0x6228 DEFINED (__AltT1Interrupt)?ABSOLUTE (__AltT1Interrupt):DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00011a          0x4 LONG 0x632c DEFINED (__AltT1Interrupt)?ABSOLUTE (__AltT1Interrupt):DEFINED (__T1Interrupt)?ABSOLUTE (__T1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00011c          0x4 LONG 0x29a DEFINED (__AltDMA0Interrupt)?ABSOLUTE (__AltDMA0Interrupt):DEFINED (__DMA0Interrupt)?ABSOLUTE (__DMA0Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00011e          0x4 LONG 0x29a DEFINED (__AltIC2Interrupt)?ABSOLUTE (__AltIC2Interrupt):DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000120          0x4 LONG 0x29a DEFINED (__AltOC2Interrupt)?ABSOLUTE (__AltOC2Interrupt):DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -1859,8 +1859,8 @@ __c30_signature
  .const             0x8d56         0x3e build/default/production/source/print3d_kinmain.o
                     0x8d90                  _pi
 
-.text             0x000d94       0x5554
- .text            0x000d94       0x5554 build/default/production/source/print3d_kinmain.o
+.text             0x000d94       0x565a
+ .text            0x000d94       0x565a build/default/production/source/print3d_kinmain.o
                   0x000d94                  _config_clock
                   0x000dfe                  _send_float
                   0x000e26                  _send_int32
@@ -1890,20 +1890,20 @@ __c30_signature
                   0x001312                  _calc_DME
                   0x00132a                  _G1RT
                   0x001648                  _g1um
-                  0x001c26                  _g1
-                  0x001c84                  _G2RT
-                  0x002b00                  _g2um
-                  0x003eee                  _g2
-                  0x003f7c                  _G3RT
-                  0x004db2                  _g3um
-                  0x00619a                  _g3
-                  0x006228                  __T1Interrupt
-                  0x006230                  _config_T1
-                  0x00625c                  _main
+                  0x001c24                  _g1
+                  0x001c82                  _G2RT
+                  0x002b60                  _g2um
+                  0x003f4c                  _g2
+                  0x003fda                  _G3RT
+                  0x004eb8                  _g3um
+                  0x00629e                  _g3
+                  0x00632c                  __T1Interrupt
+                  0x006334                  _config_T1
+                  0x006360                  _main
 
-.dinit            0x0062e8         0xfa
- .dinit           0x0062e8         0xfa data_init
+.dinit            0x0063ee         0xfa
+ .dinit           0x0063ee         0xfa data_init
 
-.init.delay32     0x0063e2         0x1c
- .init.delay32    0x0063e2         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
-                  0x0063e2                  ___delay32
+.init.delay32     0x0064e8         0x1c
+ .init.delay32    0x0064e8         0x1c c:/program files (x86)/microchip/xc16/v1.24/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
+                  0x0064e8                  ___delay32
