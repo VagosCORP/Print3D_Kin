@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/production/Print3D_Kin.X.production.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>8192</length>
+      <used>522</used>
+      <free>7670</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>131328</length>
+      <used>34476</used>
+      <free>96852</free>
+    </memory>
+  </executable>
+</project>

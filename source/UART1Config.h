@@ -54,9 +54,9 @@ typedef struct {
 
 GCODE gcode;
 
-G1CODE g1code = {0,0,0,0,0,0,0,0,0,0,0,0};
-G2CODE g2code = {0,0,0,0,0,0,0,0,0,0,0,0};
-G3CODE g3code = {0,0,0,0,0,0,0,0,0,0,0,0};
+G1CODE g1code = {0,0,0,0,0,0};
+G2CODE g2code = {0,0,0,0,0,0};
+G3CODE g3code = {0,0,0,0,0,0};
 
 void putch(char val) {
     while(U1STAbits.UTXBF);
